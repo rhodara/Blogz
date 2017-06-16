@@ -1,0 +1,13 @@
+def powerOf(b, exponent):
+  #  if (exponent==0):
+  #      return 1;
+    runningtotal = 1
+    for c in range(exponent):
+          runningtotal = runningtotal * b
+    return runningtotal
+
+base = int (input("Enter base "))
+exp =  int (input("Enter exponent "))
+
+expResult = powerOf(base,exp)
+print("The result of", base, " to the", exp," is ",expResult)
