@@ -1,17 +1,12 @@
 from flask import Flask, request, render_template
 import os
-
 app = Flask(__name__)
 app.config['DEBUG'] = True
-
 @app.route('/signup-form')
 def index():
     return render_template('signup_form.html')
-
-
 @app.route('/signup-form', methods=['POST'])
 def validate_signup_form():
-
     username = request.form['username']
     password = request.form['password']
     verify_password = request.form['verify_password']
@@ -67,6 +62,4 @@ def validate_signup_form():
             password_error=password_error, verify_error=verify_error, email_error=email_error,
             username=username,
             email=email)
-
-
 app.run()
