@@ -7,13 +7,13 @@ app.config['DEBUG'] = True
 @app.route('/')
 @app.route('/signup-form')
 def index():
-    return render_template('edit.html')
+ #   return render_template('edit.html')
     return render_template('signup_form.html')
  
 @app.route('/signup-form', methods=['POST'])
 def validate_signup_form():
-  
-@app.route('/signup', methods=['POST'])
+    
+    @app.route('/signup', methods=['POST'])
 def signup():
     username = request.form['username']
     password = request.form['password']
@@ -69,9 +69,8 @@ def signup():
             password_error=password_error, verify_error=verify_error, email_error=email_error,
             username=username,
             email=email)
-  
- @app.route('/welcome', methods=['GET'])
- def welcome():
+@app.route('/welcome', methods=['GET'])
+def welcome():
     return render_template('welcome.html', name=username)
   
 app.run()
